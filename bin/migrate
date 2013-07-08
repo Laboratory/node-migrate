@@ -252,7 +252,7 @@ var commands = {
 
 function create(name) {
   var path = 'migrations/' + name + (isCoffee ? '.coffee' : '.js');
-  log('create', join(cwd, path));
+  log('create', join(cwd || '', path));
   fs.writeFileSync(path, isCoffee ? coffee_template : template);
 }
 
